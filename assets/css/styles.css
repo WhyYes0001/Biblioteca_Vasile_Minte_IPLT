@@ -124,7 +124,6 @@ transform: ease-in-out 0.5s;
 
 
 
-
 .search-box {
   position: absolute;
   top:75%;
@@ -521,6 +520,9 @@ button {
 
 .celebrate__data {
   text-align: center;
+}
+.celebrate__data2{
+  float: right;
 }
 
 .celebrate__title {
@@ -1037,11 +1039,18 @@ margin-left: 10rem ;
   }
 
   .celebrate__data, 
-  .celebrate__title {
+  .celebrate__title{
     text-align: initial;
+  }
+  .celebrate__title2{
+    text-align: left;
+    padding: 0 0 0 2.7rem;
   }
   .celebrate__description {
     padding: 0;
+  }
+  .celebrate__description2 {
+    padding: 0 0 0 2.7rem;
   }
 
   .gift__container {
