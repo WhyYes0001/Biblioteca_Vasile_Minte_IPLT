@@ -166,6 +166,9 @@ transform: ease-in-out 0.5s;
     background: var(--first-color);;
     transition: all 0.35s;
  }
+ .tab-content ul li {
+  margin-bottom: 10px; /* Adjust the desired amount of space */
+}
   .tab-close {
     display: flex;
     justify-content: flex-end;
