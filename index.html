@@ -1840,7 +1840,255 @@
             </div>
           </div>
         </div>
+
+
+        
+
             </section>
+            <section class="new section container" id="new"> 
+
+                  <style>
+
+              
+                      :root {
+                          --d: 700ms;
+                          --e: cubic-bezier(0.19, 1, 0.22, 1);
+                          --font-sans:"Poppins", sans-serif;
+                          --font-serif: "Poppins", sans-serif;
+                     
+
+                      }
+              
+                    
+              
+                      html,
+                      body {
+                          height: 100%;
+                      }
+
+                      .rolling-page-content {
+                          display: grid;
+                          grid-gap: 1rem;
+                          padding: 1rem;
+                          max-width: 1024px;
+                          margin: 0 auto;
+                          font-family: var(--font-sans);
+                      }
+              
+                      @media (min-width: 600px) {
+                          .rolling-page-content {
+                              grid-template-columns: repeat(2, 1fr);
+                          }
+                      }
+              
+                      @media (min-width: 800px) {
+                          .rolling-page-content {
+                              grid-template-columns: repeat(4, 1fr);
+                          }
+                      }
+              
+                      .rolling-card {
+                          position: relative;
+                          display: flex;
+                          align-items: flex-end;
+                          overflow: hidden;
+                          padding: 1rem;
+                          width: 100%;
+                          text-align: center;
+                          color: whitesmoke;
+                          background-color: whitesmoke;
+                          border-radius: 10px;
+                          box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1), 0 2px 2px rgba(0, 0, 0, 0.1),
+                              0 4px 4px rgba(0, 0, 0, 0.1), 0 8px 8px rgba(0, 0, 0, 0.1), 0 16px 16px rgba(0, 0, 0, 0.1);
+                      }
+              
+                      @media (min-width: 600px) {
+                          .rolling-card {
+                              height: 350px;
+                          }
+                      }
+              
+                      .rolling-card:before {
+                          content: '';
+                          position: absolute;
+                          top: 0;
+                          left: 0;
+                          width: 100%;
+                          height: 110%;
+                          background-size: cover;
+                          background-position: 0 0;
+                          transition: transform calc(var(--d) * 1.5) var(--e);
+                          pointer-events: none;
+                      }
+              
+                      .rolling-card:after {
+                          content: '';
+                          display: block;
+                          position: absolute;
+                          top: 0;
+                          left: 0;
+                          width: 100%;
+                          height: 200%;
+                          pointer-events: none;
+                          background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.009) 11.7%, rgba(0, 0, 0, 0.034) 22.1%, rgba(0, 0, 0, 0.072) 31.2%, rgba(0, 0, 0, 0.123) 39.4%, rgba(0, 0, 0, 0.182) 46.6%, rgba(0, 0, 0, 0.249) 53.1%, rgba(0, 0, 0, 0.320) 58.9%, rgba(0, 0, 0, 0.394) 64.3%, rgba(0, 0, 0, 0.468) 69.3%, rgba(0, 0, 0, 0.540) 74.1%, rgba(0, 0, 0, 0.607) 78.8%, rgba(0, 0, 0, 0.668) 83.6%, rgba(0, 0, 0, 0.721) 88.7%, rgba(0, 0, 0, 0.762) 94.1%, rgba(0, 0, 0, 0.790) 100%);
+                          transform: translateY(-50%);
+                          transition: transform calc(var(--d) * 2) var(--e);
+                      }
+              
+                      .rolling-card:nth-child(1):before {
+                          background-image: url(https://images.unsplash.com/photo-1532012197267-da84d127e765?q=80&w=2574&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
+                      }
+              
+                      .rolling-card:nth-child(2):before {
+                          background-image: url(https://images.unsplash.com/photo-1500099817043-86d46000d58f?q=80&w=1287&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
+                      }
+              
+                      .rolling-card:nth-child(3):before {
+                          background-image: url(https://images.unsplash.com/photo-1531379410502-63bfe8cdaf6f?q=80&w=2574&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
+                      }
+              
+                      .rolling-card:nth-child(4):before {
+                          background-image: url(https://images.unsplash.com/photo-1573184426556-05c59aca2e3b?q=80&w=1287&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
+                      }
+              
+                      .rolling-content {
+                          position: relative;
+                          display: flex;
+                          flex-direction: column;
+                          align-items: center;
+                          width: 100%;
+                          padding: 1rem;
+                          transition: transform var(--d) var(--e);
+                          z-index: 1;
+                          
+                      }
+              
+                      .rolling-content > *+* {
+                          margin-top: 1rem;
+                        
+                      }
+              
+                      .rolling-title {
+                          font-size: 1.3rem;
+                          font-weight: bold;
+                          line-height: 1.2;
+                      }
+              
+                      .rolling-copy {
+                          font-family: var(--font-serif);
+                          font-size: 1.125rem;
+                          line-height: 1.35;
+                      }
+              
+                      .rolling-btn {
+                          cursor: pointer;
+                          margin-top: 1.5rem;
+                          padding: 0.75rem 1.5rem;
+                          font-size: 0.65rem;
+                          font-weight: bold;
+                          letter-spacing: 0.025rem;
+                          text-transform: uppercase;
+                          color: white;
+                          background-color: black;
+                          border: none;
+                      }
+              
+                      .rolling-btn:hover {
+                          background-color: #0d0d0d;
+                      }
+              
+                      .rolling-btn:focus {
+                          outline: 1px dashed yellow;
+                          outline-offset: 3px;
+                      }
+              
+                      @media (hover: hover) and (min-width: 600px) {
+                          .rolling-card:after {
+                              transform: translateY(0);
+                          }
+              
+                          .rolling-content {
+                              transform: translateY(calc(100% - 4.5rem));
+                          }
+              
+                          .rolling-content>*:not(.rolling-title) {
+                              opacity: 0;
+                              transform: translateY(1rem);
+                              transition: transform var(--d) var(--e), opacity var(--d) var(--e);
+                          }
+              
+                          .rolling-card:hover,
+                          .rolling-card:focus-within {
+                              align-items: center;
+                          }
+              
+                          .rolling-card:hover:before,
+                          .rolling-card:focus-within:before {
+                              transform: translateY(-4%);
+                          }
+              
+                          .rolling-card:hover:after,
+                          .rolling-card:focus-within:after {
+                              transform: translateY(-50%);
+                          }
+              
+                          .rolling-card:hover .rolling-content,
+                          .rolling-card:focus-within .rolling-content {
+                              transform: translateY(0);
+                          }
+              
+                          .rolling-card:hover .rolling-content>*:not(.rolling-title),
+                          .rolling-card:focus-within .rolling-content>*:not(.rolling-title) {
+                              opacity: 1;
+                              transform: translateY(0);
+                              transition-delay: calc(var(--d) / 8);
+                          }
+              
+                          .rolling-card:focus-within:before,
+                          .rolling-card:focus-within:after,
+                          .rolling-card:focus-within .rolling-content,
+                          .rolling-card:focus-within .rolling-content>*:not(.rolling-title) {
+                              transition-duration: 0s;
+                          }
+                      }
+                  </style>
+              
+              <h2 class="section__title1">De ce să citim?</h2>
+                  <main class="rolling-page-content">
+                      <div class="rolling-card">
+                          <div class="rolling-content">
+                              <h2 class="rolling-title">Ne oferă cunoștințe noi</h2>
+                              <p class="rolling-copy">Unul dintre cele mai importante motive pentru care citim cărți este pentru că acumulăm cunoștințe noi. </p>
+                          </div>
+                      </div>
+                      <div class="rolling-card">
+                          <div class="rolling-content">
+                              <h2 class="rolling-title">Reduce stresul și depresia</h2>
+                              <p class="rolling-copy">Reduce stresul și depresia</p>
+                          </div>
+                      </div>
+                      <div class="rolling-card">
+                          <div class="rolling-content">
+                              <h2 class="rolling-title">Dezvoltă creierul</h2>
+                              <p class="rolling-copy">Studiile arată că cititul are efecte pozitive asupra creierului.</p>
+                          </div>
+                      </div>
+                      <div class="rolling-card">
+                          <div class="rolling-content">
+                              <h2 class="rolling-title">Îmbunătățește memoria</h2>
+                              <p class="rolling-copy">De fiecare dată când citim o carte trebuie să memorăm personajele, trecutul lor, spațiul, acțiunea, conflictul, intriga.</p>
+                          </div>
+                      </div>
+                  </main>
+         
+              
+          </section>
+
+
+
+
+
+
 
             <section class="message section container">
                 <div class="message__container grid">
@@ -1860,7 +2108,8 @@
 
 
         </main>
-
+        
+  
 
 
 
